@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ public class TesseractTextExtractor : ITextExtractor
 {
 	public async Task<string?> ExtractAsync(IFormFile file, CancellationToken cancellationToken = default)
 	{
-		try
-		{
+		//try
+		//{
 			using var engine = new TesseractEngine(
 				Path.Combine(Directory.GetCurrentDirectory(), "tessdata"), 
 				"fra", 
@@ -30,11 +30,11 @@ public class TesseractTextExtractor : ITextExtractor
 					return page.GetText();
 				}
 			}
-		}
-		catch (Exception e)
-		{
-			return null;
-		}
+		//}
+		//catch (Exception e)
+		//{
+		//	return null;
+		//}
 
 	}
 }
