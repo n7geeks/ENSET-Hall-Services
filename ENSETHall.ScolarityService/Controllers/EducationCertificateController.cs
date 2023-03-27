@@ -31,6 +31,6 @@ public class EducationCertificateController : Controller
 		{
 			return BadRequest();
 		}
-		return Ok(extractedText);
+		return Ok(result);
 	}
 }
