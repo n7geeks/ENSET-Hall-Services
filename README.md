@@ -26,7 +26,7 @@ Using this service, the right hand json file was extracted from the left hand "A
 
 ## API
 
-The app has only one endpoint /analyse that takes a form-data file (it has to be of type image) in the request body and returns a JSON response if success.
+The app has only one endpoint https://n7h-scolarity-service.azurewebsites.net/analyse that takes a form-data file (it has to be of type image) in the request body and returns a JSON response if success.
 
 ## Authentication
 
