@@ -33,7 +33,7 @@ public class TesseractTextExtractor : ITextExtractor
 		}
 		catch (Exception e)
 		{
-			return e.Message;
+			return null;
 		}
 
 	}
