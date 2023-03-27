@@ -10,14 +10,18 @@ public class EducationCertificateController : Controller
 	private readonly ITextExtractor _textExtractor;
 	private readonly IStudentInfoParser _studentInfoParser;
 
-	public EducationCertificateController(ITextExtractor textExtractor, IStudentInfoParser studentInfoParser)
+	public EducationCertificateController(
+		ITextExtractor textExtractor,
+		IStudentInfoParser studentInfoParser)
 	{
 		_textExtractor = textExtractor;
 		_studentInfoParser = studentInfoParser;
 	}
 
 	[HttpPost]
-	public async Task<IActionResult> ExtractStudentInfo([FromForm] IFormFile file, CancellationToken cancellationToken)
+	public async Task<IActionResult> ExtractStudentInfo(
+		[FromForm] IFormFile file, 
+		CancellationToken cancellationToken)
 	{
 		var extractedText = await _textExtractor.ExtractAsync(file, cancellationToken);
 		if (extractedText is null)
