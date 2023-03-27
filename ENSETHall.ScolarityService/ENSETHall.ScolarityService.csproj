@@ -23,5 +23,14 @@
 	    <Link>.dockerignore</Link>
 	  </Content>
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Update="tessdata\fra.traineddata">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="tessdata\pdf.ttf">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
 
 </Project>
