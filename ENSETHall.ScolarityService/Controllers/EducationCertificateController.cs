@@ -1,4 +1,4 @@
-﻿using ENSETHall.ScolarityService.Services;
+using ENSETHall.ScolarityService.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ENSETHall.ScolarityService.Controllers;
@@ -8,12 +8,12 @@ namespace ENSETHall.ScolarityService.Controllers;
 public class EducationCertificateController : Controller
 {
 	private readonly ITextExtractor _textExtractor;
-	private readonly IStudentInfoParser _studentInfoParser;
+	//private readonly IStudentInfoParser _studentInfoParser;
 
 	public EducationCertificateController(ITextExtractor textExtractor, IStudentInfoParser studentInfoParser)
 	{
 		_textExtractor = textExtractor;
-		_studentInfoParser = studentInfoParser;
+		//_studentInfoParser = studentInfoParser;
 	}
 
 	[HttpPost]
@@ -24,14 +24,14 @@ public class EducationCertificateController : Controller
 		{
 			return BadRequest();
 		}
-		var result = await _studentInfoParser.ParseAsync(
-			extractedText, 
-			cancellationToken);
-		if (result is null)
-		{
-			return BadRequest();
-		}
-		Response.ContentType = "application/json";
-		return Ok(result);
+		//var result = await _studentInfoParser.ParseAsync(
+		//	extractedText, 
+		//	cancellationToken);
+		//if (result is null)
+		//{
+		//	return BadRequest();
+		//}
+		//Response.ContentType = "application/json";
+		return Ok(extractedText);
 	}
 }
